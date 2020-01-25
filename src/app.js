@@ -4,18 +4,22 @@
  * @Author: silencetea
  * @Date: 2020-01-19 21:34:52
  * @LastEditors  : silencetea
- * @LastEditTime : 2020-01-25 00:36:46
+ * @LastEditTime : 2020-01-25 14:01:57
  */
 import Vue from 'vue'
 import App from './App.vue'
+import { createRouter } from './router'
 
 export function createApp() {
+    const router = createRouter();
     const app = new Vue({
+        router,
         render: h => h(App)
     })
 
     // 返回 app
     return {
-        app
+        app,
+        router
     }
 }

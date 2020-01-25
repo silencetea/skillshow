@@ -4,7 +4,7 @@
  * @Author: silencetea
  * @Date: 2020-01-23 19:31:06
  * @LastEditors  : silencetea
- * @LastEditTime : 2020-01-24 23:10:00
+ * @LastEditTime : 2020-01-25 14:03:59
  */
 const fs = require('fs')
 const path = require('path')
@@ -32,7 +32,7 @@ module.exports = function setupDevServer(app, templatePath, cb) {
     const update = () => {
         if (bundle && clientManifest) {
             ready()
-            console.log(template)
+            // console.log(template)
             cb(bundle, {
                 template,
                 clientManifest
