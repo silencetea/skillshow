@@ -49,7 +49,8 @@ module.exports = {
             },
             {
                 test: /\.styl(us)?$/,
-                use: isProd ?
+                loader: 'style-loader!css-loader!stylus-loader'
+                /*use: isProd ?
                     ExtractTextPlugin.extract({
                         use: [{
                                 loader: 'css-loader',
@@ -60,25 +61,20 @@ module.exports = {
                             'stylus-loader'
                         ],
                         fallback: 'vue-style-loader'
-                    }) : ['vue-style-loader', 'css-loader', 'stylus-loader']
+                    }) : ['vue-style-loader', 'css-loader', 'stylus-loader']*/
             },
         ]
     },
     performance: {
         hints: false
     },
-
-    /* optimization: {
-         minimizer: [
-             new TerserPlugin({
-                 cache: true, // 开启缓存
-                 parallel: true, // 支持多进程
-                 sourceMap: true, 
-             }),
-         ]
-     },*/
     optimization: {
         minimizer: [
+            /*new TerserPlugin({
+                cache: true, // 开启缓存
+                parallel: true, // 支持多进程
+                sourceMap: true, 
+            }),*/
             new UglifyJSPlugin({
                 uglifyOptions: {
                     output: {
