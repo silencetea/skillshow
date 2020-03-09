@@ -40,7 +40,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif|svg|ttf|woff|woff2|eot)$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000,

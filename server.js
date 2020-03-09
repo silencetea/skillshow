@@ -1,4 +1,7 @@
-const server = require('express')()
+// const server = require('express')()
+const {app, pool, Result} = require("./backstage/db/connect");
+const server = app;
+
 const fs = require('fs')
 const path = require('path')
 const resolve = file => path.resolve(__dirname, file)
@@ -85,6 +88,9 @@ function render(req, res) {
     })
 }
 
+// const userRouter = require("./backstage/routes/user");
+// server.use('/user', userRouter);
+require("./backstage/index");  // 接口路由
 
 server.get('*', isProd ? render : (req, res) => {
     readyPromise.then(() => render(req, res))
@@ -101,3 +107,10 @@ const hostname = '127.0.0.1';
 server.listen(port, hostname, () => {
     console.log(`服务器运行在 http://${hostname}:${port}/`);
 });*/
+
+
+// 连接数据库
+// require('./backstage/db/db_mysql')
+
+// 添加路由
+// require("./backstage/index");
