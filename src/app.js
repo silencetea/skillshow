@@ -3,8 +3,8 @@
  * @version: 
  * @Author: silencetea
  * @Date: 2020-01-19 21:34:52
- * @LastEditors  : silencetea
- * @LastEditTime : 2020-01-25 14:01:57
+ * @LastEditors: silencetea
+ * @LastEditTime: 2020-03-09 21:04:46
  */
 import Vue from 'vue'
 import App from './App.vue'
